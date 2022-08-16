@@ -20,7 +20,7 @@ export type AdapterProps = {
 };
 
 /** @return { import("next-auth/adapters").Adapter } */
-export default function DirectusAdapter({
+export function DirectusAdapter({
   client: directus,
   assignRole,
 }: AdapterProps): Adapter {
