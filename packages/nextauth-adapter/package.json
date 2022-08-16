@@ -1,6 +1,6 @@
 {
   "name": "@struq.io/nextauth-adapter-directus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NextAuth.js adapter for directus",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,10 @@
   },
   "dependencies": {
     "@directus/sdk": "^10.1.4"
+  },
+  "gitHead": "ed1b428b51062af376ff2e9d86307f37082e0dd8",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

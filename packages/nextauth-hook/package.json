@@ -1,6 +1,6 @@
 {
   "name": "@struq.io/directus-extension-nextauth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NextAuth authentication extension for Directus",
   "license": "MIT",
   "keywords": [
@@ -24,5 +24,10 @@
     "@directus/shared": "^9.15.1",
     "@types/node": "^18.7.6",
     "typescript": "^4.7.4"
+  },
+  "gitHead": "ed1b428b51062af376ff2e9d86307f37082e0dd8",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
