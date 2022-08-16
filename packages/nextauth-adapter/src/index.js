@@ -20,6 +20,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DirectusAdapter = void 0;
 /** @return { import("next-auth/adapters").Adapter } */
 function DirectusAdapter({ client: directus, assignRole, }) {
     return {
@@ -161,7 +162,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
         }),
     };
 }
-exports.default = DirectusAdapter;
+exports.DirectusAdapter = DirectusAdapter;
 function nullsToUndefined(obj) {
     if (obj === null) {
         return undefined;
