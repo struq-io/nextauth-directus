@@ -22,21 +22,21 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DirectusAdapter = void 0;
 /** @return { import("next-auth/adapters").Adapter } */
-function DirectusAdapter({ client: directus, assignRole, }) {
+const DirectusAdapter = ({ client: directus, assignRole, }) => {
     return {
-        createUser: (user) => __awaiter(this, void 0, void 0, function* () {
+        createUser: (user) => __awaiter(void 0, void 0, void 0, function* () {
             var _a;
             return (_a = (yield directus.users.createOne(Object.assign(Object.assign({}, user), { role: assignRole ? assignRole : null })))) !== null && _a !== void 0 ? _a : null;
         }),
-        getUser: (id) => __awaiter(this, void 0, void 0, function* () { var _b; return (_b = (yield directus.users.readOne(id))) !== null && _b !== void 0 ? _b : null; }),
-        getUserByEmail: (email) => __awaiter(this, void 0, void 0, function* () {
+        getUser: (id) => __awaiter(void 0, void 0, void 0, function* () { var _b; return (_b = (yield directus.users.readOne(id))) !== null && _b !== void 0 ? _b : null; }),
+        getUserByEmail: (email) => __awaiter(void 0, void 0, void 0, function* () {
             var _c, _d;
             return (_d = (_c = (yield directus.users.readByQuery({
                 filter: { email: { _eq: email } },
                 limit: 1,
             })).data) === null || _c === void 0 ? void 0 : _c[0]) !== null && _d !== void 0 ? _d : null;
         }),
-        getUserByAccount: ({ provider, providerAccountId }) => __awaiter(this, void 0, void 0, function* () {
+        getUserByAccount: ({ provider, providerAccountId }) => __awaiter(void 0, void 0, void 0, function* () {
             var _e;
             return (_e = (yield directus
                 .items("account")
@@ -51,13 +51,13 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                 .then((result) => { var _a; return (_a = result.data) === null || _a === void 0 ? void 0 : _a[0]; })
                 .then((account) => directus.users.readOne(account === null || account === void 0 ? void 0 : account.userId)))) !== null && _e !== void 0 ? _e : null;
         }),
-        updateUser: (_f) => __awaiter(this, void 0, void 0, function* () {
+        updateUser: (_f) => __awaiter(void 0, void 0, void 0, function* () {
             var { id } = _f, user = __rest(_f, ["id"]);
             return (yield directus.users.updateOne(id, nullsToUndefined(user)));
         }),
-        deleteUser: (id) => __awaiter(this, void 0, void 0, function* () { return yield directus.users.deleteOne(id); }),
-        linkAccount: (data) => __awaiter(this, void 0, void 0, function* () { return (yield directus.items("account").createOne(data)); }),
-        unlinkAccount: ({ provider, providerAccountId }) => __awaiter(this, void 0, void 0, function* () {
+        deleteUser: (id) => __awaiter(void 0, void 0, void 0, function* () { return yield directus.users.deleteOne(id); }),
+        linkAccount: (data) => __awaiter(void 0, void 0, void 0, function* () { return (yield directus.items("account").createOne(data)); }),
+        unlinkAccount: ({ provider, providerAccountId }) => __awaiter(void 0, void 0, void 0, function* () {
             return (yield directus
                 .items("account")
                 .readByQuery({
@@ -71,13 +71,13 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                 .then((result) => { var _a, _b; return (_b = (_a = result.data) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.id; })
                 .then((id) => directus.items("account").deleteOne(id)));
         }),
-        createSession: (session) => __awaiter(this, void 0, void 0, function* () {
+        createSession: (session) => __awaiter(void 0, void 0, void 0, function* () {
             const createdSession = (yield directus
                 .items("session")
                 .createOne(session));
             return Object.assign(Object.assign({}, createdSession), { expires: new Date(createdSession.expires) });
         }),
-        updateSession: (session) => __awaiter(this, void 0, void 0, function* () {
+        updateSession: (session) => __awaiter(void 0, void 0, void 0, function* () {
             return (yield directus
                 .items("session")
                 .readByQuery({
@@ -88,7 +88,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                 .then((result) => { var _a, _b; return (_b = (_a = result.data) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.id; })
                 .then((id) => directus.items("session").updateOne(id, session)));
         }),
-        deleteSession: (session) => __awaiter(this, void 0, void 0, function* () {
+        deleteSession: (session) => __awaiter(void 0, void 0, void 0, function* () {
             return (yield directus
                 .items("session")
                 .readByQuery({
@@ -99,7 +99,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                 .then((result) => { var _a, _b; return (_b = (_a = result.data) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.id; })
                 .then((id) => directus.items("session").deleteOne(id)));
         }),
-        createVerificationToken: (token) => __awaiter(this, void 0, void 0, function* () {
+        createVerificationToken: (token) => __awaiter(void 0, void 0, void 0, function* () {
             const check = yield directus.items("verificationToken").readByQuery({
                 filter: { identifier: { _eq: token.identifier } },
                 limit: 1,
@@ -115,7 +115,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                     .createOne(token));
             }
         }),
-        useVerificationToken: ({ token, identifier }) => __awaiter(this, void 0, void 0, function* () {
+        useVerificationToken: ({ token, identifier }) => __awaiter(void 0, void 0, void 0, function* () {
             try {
                 return yield directus
                     .items("verificationToken")
@@ -124,7 +124,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                     limit: 1,
                 })
                     .then((result) => { var _a; return (_a = result.data) === null || _a === void 0 ? void 0 : _a[0]; })
-                    .then((token) => __awaiter(this, void 0, void 0, function* () {
+                    .then((token) => __awaiter(void 0, void 0, void 0, function* () {
                     yield directus.items("verificationToken").deleteOne(identifier);
                     return token;
                 }))
@@ -137,7 +137,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
                 return null;
             }
         }),
-        getSessionAndUser: (sessionToken) => __awaiter(this, void 0, void 0, function* () {
+        getSessionAndUser: (sessionToken) => __awaiter(void 0, void 0, void 0, function* () {
             var _g;
             try {
                 const session = (_g = (yield directus.items("session").readByQuery({
@@ -161,7 +161,7 @@ function DirectusAdapter({ client: directus, assignRole, }) {
             }
         }),
     };
-}
+};
 exports.DirectusAdapter = DirectusAdapter;
 function nullsToUndefined(obj) {
     if (obj === null) {

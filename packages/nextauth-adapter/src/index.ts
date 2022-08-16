@@ -20,10 +20,10 @@ export type AdapterProps = {
 };
 
 /** @return { import("next-auth/adapters").Adapter } */
-export function DirectusAdapter({
+export const DirectusAdapter = ({
   client: directus,
   assignRole,
-}: AdapterProps): Adapter {
+}: AdapterProps): Adapter => {
   return {
     createUser: async (user) =>
       ((await directus.users.createOne({
@@ -171,7 +171,7 @@ export function DirectusAdapter({
       }
     },
   };
-}
+};
 
 type RecursivelyReplaceNullWithUndefined<T> = T extends null
   ? undefined

@@ -11,5 +11,5 @@ export declare type AdapterProps = {
     assignRole?: string;
 };
 /** @return { import("next-auth/adapters").Adapter } */
-export declare function DirectusAdapter({ client: directus, assignRole, }: AdapterProps): Adapter;
+export declare const DirectusAdapter: ({ client: directus, assignRole, }: AdapterProps) => Adapter;
 export {};

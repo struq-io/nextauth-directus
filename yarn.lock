@@ -1254,11 +1254,11 @@
 
 "@struq.io/directus-extension-nextauth@file:/Users/leonardstruck/Coding/nextauth-directus/packages/nextauth-hook":
   "resolved" "file:packages/nextauth-hook"
-  "version" "0.0.5"
+  "version" "0.0.6"
 
 "@struq.io/nextauth-adapter-directus@file:/Users/leonardstruck/Coding/nextauth-directus/packages/nextauth-adapter":
   "resolved" "file:packages/nextauth-adapter"
-  "version" "0.0.5"
+  "version" "0.0.6"
   dependencies:
     "@directus/sdk" "^10.1.4"
 

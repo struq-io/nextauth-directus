@@ -2,7 +2,7 @@
   "name": "@struq.io/nextauth-adapter-directus",
   "version": "0.0.6",
   "description": "NextAuth.js adapter for directus",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
