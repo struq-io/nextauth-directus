@@ -16,9 +16,10 @@
   "dependencies": {
     "@directus/sdk": "^10.1.4"
   },
-  "gitHead": "ed1b428b51062af376ff2e9d86307f37082e0dd8",
+  "gitHead": "597490b8ed6e025570f317e1bd9f87ae237ed154",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "types": "./src/index.d.ts"
 }
