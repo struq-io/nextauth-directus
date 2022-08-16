@@ -1,0 +1,19 @@
+{
+  "name": "@struq.io/nextauth-adapter-directus",
+  "version": "1.0.0",
+  "description": "NextAuth.js adapter for directus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "next-auth": "^4.10.3",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@directus/sdk": "^10.1.4"
+  }
+}

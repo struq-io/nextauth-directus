@@ -1,0 +1,29 @@
+{
+  "name": "@struq.io/directus-extension-nextauth",
+  "version": "1.0.0",
+  "description": "NextAuth authentication extension for Directus",
+  "license": "MIT",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-hook",
+    "nextauth"
+  ],
+  "directus:extension": {
+    "type": "hook",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^9.15.1"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "9.15.1",
+    "@directus/shared": "^9.15.1",
+    "@types/node": "^18.7.6",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {}
+}
