@@ -1,6 +1,6 @@
 {
   "name": "@struq.io/directus-extension-nextauth",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "NextAuth authentication extension for Directus",
   "license": "MIT",
   "keywords": [
