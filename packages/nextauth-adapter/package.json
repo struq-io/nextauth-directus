@@ -1,6 +1,6 @@
 {
   "name": "@struq.io/nextauth-adapter-directus",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "NextAuth.js adapter for directus",
   "main": "index.js",
   "scripts": {
