@@ -7,7 +7,6 @@ import type {
 export default defineHook(({ filter }) => {
   filter("authenticate", async (payload, meta, context) => {
     const nextToken: string | undefined = meta.req.query.next_token;
-    console.log(payload);
     if (nextToken) {
       const user = await context
         .database("directus_users")
@@ -43,8 +42,6 @@ async function upgradeAccountability(
       status: "active",
     })
     .first();
-
-  console.log(userData);
 
   if (!userData) return accountability;
 
